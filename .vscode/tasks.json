@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Debug",
+      "type": "shell",
+      "command": "cmake -S . -B build/debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++ && cmake --build build/debug",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Release",
+      "type": "shell",
+      "command": "cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=\"-Wall -Wextra\" && cmake --build build/release",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+        "label": "Run Release Binary",
+        "type": "shell",
+        "command": "${workspaceFolder}/build/release/RayTracing",
+        "problemMatcher": [],
+        "group": {
+            "kind": "test",
+            "isDefault": true
+        }
+        }
+  ]
+}

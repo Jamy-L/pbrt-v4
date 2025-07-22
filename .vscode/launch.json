@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug (LLDB - Debug Build)",
+      "type": "lldb",
+      "request": "launch",
+      // "program": "${workspaceFolder}/build/debug/pbrt",
+      "program": "${workspaceFolder}/build/debug/pbrt",
+      // "args": ["dummy_scene.pbrt", "--nthreads", "1", "--log-level", "verbose"],
+      "args": ["dummy_scene.pbrt", "--log-level", "verbose"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build Debug"
+    }
+  ]
+}
