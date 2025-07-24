@@ -30,6 +30,26 @@
             "kind": "test",
             "isDefault": true
         }
-        }
+        },
+        {
+      "label": "Build Exercises Debug",
+      "type": "shell",
+      "command": "cmake -S exercises -B build_exercises/debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++ && cmake --build build_exercises/debug",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Exercises Release",
+      "type": "shell",
+      "command": "cmake -S exercises -B build_exercises/release -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_FLAGS=\"-Wall -Wextra\" && cmake --build build_exercises/release",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    }
   ]
 }
