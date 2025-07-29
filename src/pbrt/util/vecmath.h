@@ -1827,6 +1827,29 @@ PBRT_CPU_GPU inline DirectionCone BoundSubtendedDirections(const Bounds3f &b, Po
     return DirectionCone(w, cosThetaMax);
 }
 
+// PBRT_CPU_GPU inline DirectionCone BoundSubtendedDirections(const Bounds3f &b, Point3f p) {
+//     if (Inside(p, b))
+//         return DirectionCone::EntireSphere();
+
+//     Vector3f vi_min, vj_min;
+//     Float minDot = Infinity;
+//     for (uint ci = 0; ci < 8; ++ci) {
+//         Vector3f vi = Normalize(p - b.Corner(ci));
+//         for (uint cj = 0; cj < ci; ++cj) {
+//             Vector3f vj = Normalize(p - b.Corner(cj));
+//             Float dotij = Dot(vi, vj);
+//             if (dotij < minDot) {
+//                 minDot = dotij;
+//                 vi_min = vi;
+//                 vj_min = vj;
+//             }
+//         }
+//     }
+//     Vector3f w = Normalize(0.5f * (vi_min + vj_min));
+
+//     return DirectionCone(w, Dot(w, vi_min));
+// }
+
 PBRT_CPU_GPU
 inline Vector3f DirectionCone::ClosestVectorInCone(Vector3f wp) const {
     DCHECK(!IsEmpty());
